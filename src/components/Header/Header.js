@@ -7,19 +7,29 @@ import {
   Notifications,
   SupervisorAccount,
 } from '@material-ui/icons';
+import { useDispatch } from 'react-redux';
 
 import './Header.css';
-import icon from './link.png';
+import icon from '../../alt_LiNK_UP.png';
 import HeaderOptions from './HeaderOptions';
+import { logout } from '../../redux/userSlice';
+import { auth } from '../../firebase/firebase';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <div className="header">
       <div className="header_left">
         <img src={icon} alt="Link up" />
         <div className="header_search">
           <Search />
-          <input type="text" />
+          <input placeholder="Search" type="text" />
         </div>
       </div>
       <div className="header_right">
@@ -31,6 +41,7 @@ const Header = () => {
         <HeaderOptions
           avatar="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png"
           title="me"
+          onClick={logoutOfApp}
         />
       </div>
     </div>

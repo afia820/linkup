@@ -3,9 +3,9 @@ import React from 'react';
 
 import './HeaderOptions.css';
 
-const HeaderOptions = ({ Icon, title, avatar }) => {
+const HeaderOptions = ({ Icon, title, avatar, onClick }) => {
   return (
-    <div className="headerOptions">
+    <div onClick={onClick} className="headerOptions">
       {Icon && <Icon className="headerOptions_icon" />}
       {avatar && <Avatar className="headerOptions_icon" src={avatar} />}
       <h3 className="headerOptions_title">{title}</h3>
