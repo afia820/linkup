@@ -1,10 +1,12 @@
 import React from 'react';
-import SearchIcon from '@material-ui/icons/Search';
-import HomeIcon from '@material-ui/icons/Home';
-import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
-import ChatIcon from '@material-ui/icons/Chat';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import {
+  Search,
+  Home,
+  BusinessCenter,
+  Chat,
+  Notifications,
+  SupervisorAccount,
+} from '@material-ui/icons';
 
 import './Header.css';
 import icon from './link.png';
@@ -16,16 +18,16 @@ const Header = () => {
       <div className="header_left">
         <img src={icon} alt="Link up" />
         <div className="header_search">
-          <SearchIcon />
+          <Search />
           <input type="text" />
         </div>
       </div>
       <div className="header_right">
-        <HeaderOptions Icon={HomeIcon} title="Home" />
-        <HeaderOptions Icon={SupervisorAccountIcon} title="My Network" />
-        <HeaderOptions Icon={BusinessCenterIcon} title="Jobs" />
-        <HeaderOptions Icon={ChatIcon} title="Messaging" />
-        <HeaderOptions Icon={NotificationsIcon} title="Notifications" />
+        <HeaderOptions Icon={Home} title="Home" />
+        <HeaderOptions Icon={SupervisorAccount} title="My Network" />
+        <HeaderOptions Icon={BusinessCenter} title="Jobs" />
+        <HeaderOptions Icon={Chat} title="Messaging" />
+        <HeaderOptions Icon={Notifications} title="Notifications" />
         <HeaderOptions
           avatar="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png"
           title="me"
