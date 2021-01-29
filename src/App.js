@@ -36,10 +36,12 @@ function App() {
       {!user ? (
         <Login />
       ) : (
-        <div className="app_body">
-          <Sidebar />
-          <Feed />
-          <Widgets />
+        <div>
+          <div className="app_body">
+            <Sidebar />
+            <Feed />
+            <Widgets />
+          </div>
         </div>
       )}
     </div>
