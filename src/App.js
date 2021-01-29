@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { Header, Sidebar, Feed } from './components/index';
 import Login from './components/Login/Login';
+import Widgets from './components/Widgets/Widgets';
 import { auth } from './firebase/firebase';
 import { login, logout, selectUser } from './redux/userSlice';
 
@@ -23,7 +24,6 @@ function App() {
             photoUrl: userAuth.photoURL,
           })
         );
-        console.log(user);
       } else {
         dispatch(logout());
       }
@@ -39,7 +39,7 @@ function App() {
         <div className="app_body">
           <Sidebar />
           <Feed />
-          {/* Widgets */}
+          <Widgets />
         </div>
       )}
     </div>
