@@ -39,10 +39,10 @@ const Header = () => {
         <HeaderOptions Icon={Chat} title="Messaging" />
         <HeaderOptions Icon={Notifications} title="Notifications" />
         <HeaderOptions
-          avatar="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png"
+          avatar={true}
           title="me"
           onClick={logoutOfApp}
-        />
+        ></HeaderOptions>
       </div>
     </div>
   );

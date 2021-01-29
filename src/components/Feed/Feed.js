@@ -12,8 +12,11 @@ import './Feed.css';
 import InputOptions from './InputOptions';
 import Post from './Post';
 import { db } from '../../firebase/firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/userSlice';
 
 const Feed = () => {
+  const user = useSelector(selectUser);
   const [posts, setPosts] = useState([]);
   const [input, setInput] = useState('');
 
@@ -34,10 +37,10 @@ const Feed = () => {
     e.preventDefault();
 
     db.collection('posts').add({
-      name: 'Nana',
-      description: 'Description',
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl: '',
+      photoUrl: user.photoUrl || '',
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setInput('');
@@ -70,7 +73,6 @@ const Feed = () => {
           />
         </div>
       </div>
-      {/* Posts */}
       {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
         <Post
           key={id}

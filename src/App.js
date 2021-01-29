@@ -19,10 +19,11 @@ function App() {
           login({
             email: userAuth.email,
             uid: userAuth.uid,
-            displayName: userAuth.name,
-            photoURL: userAuth.profilePic,
+            displayName: userAuth.displayName,
+            photoUrl: userAuth.photoURL,
           })
         );
+        console.log(user);
       } else {
         dispatch(logout());
       }

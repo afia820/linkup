@@ -22,9 +22,11 @@ const Sidebar = () => {
           src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
           alt="Dawn"
         />
-        <Avatar className="sidebar_avatar" />
-        <h2>Nana</h2>
-        <h4>nana@email.com</h4>
+        <Avatar src={user.photoUrl} className="sidebar_avatar">
+          {user.email[0]}
+        </Avatar>
+        <h2>{user.displayName}</h2>
+        <h4>{user.email}</h4>
       </div>
       <div className="sidebar_stats">
         <div className="sidebar_stat">
